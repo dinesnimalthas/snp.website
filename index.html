@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
     <div class="bg-orb orb-1"></div>
     <div class="bg-orb orb-2"></div>
     <div class="noise"></div>
@@ -37,6 +39,9 @@
         <a href="#projekte">Projekte</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
       <a href="https://www.instagram.com/snp.performance" target="_blank" rel="noopener noreferrer" class="header-cta"
         >Anfrage</a
       >
@@ -79,7 +84,43 @@
               </div>
             </div>
           </div>
+
+          <!-- Car image visual -->
+          <div class="hero-visual reveal">
+            <img
+              src="bilder snp/WhatsApp Image 2026-05-07 at 15.41.52.jpeg"
+              alt="SNP Performance – Premium Fahrzeugveredelung"
+            />
+            <div class="hero-badge">
+              <div class="hero-badge-dot"></div>
+              <div>
+                <strong>SNP Performance</strong>
+                <p>Premium Fahrzeugveredelung</p>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Stats bar -->
+        <div class="stats-bar section reveal">
+          <div class="stat-item">
+            <span class="stat-value">50+</span>
+            <span class="stat-label">Projekte</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">3+</span>
+            <span class="stat-label">Jahre Erfahrung</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">5★</span>
+            <span class="stat-label">Bewertung</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">100%</span>
+            <span class="stat-label">Zufriedenheit</span>
+          </div>
+        </div>
+
       </section>
 
       <section id="services" class="section services">
@@ -90,11 +131,17 @@
 
         <div class="service-grid">
           <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
             <p class="service-index">01</p>
             <h3>Apple CarPlay Einbau</h3>
             <p>Saubere Nachrüstung mit OEM-nahem Look, intuitiver Bedienung und perfekter Integration in dein Cockpit.</p>
           </article>
           <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            </div>
             <p class="service-index">02</p>
             <h3>Ambientebeleuchtung</h3>
             <p>
@@ -103,6 +150,9 @@
             </p>
           </article>
           <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
             <p class="service-index">03</p>
             <h3>Innenraum Upgrade</h3>
             <p>
@@ -110,8 +160,9 @@
               hochwertiger wirkt.
             </p>
           </article>
-          <article class="service-card reveal">
-            <p class="service-index">04</p>
+          <article class="service-card reveal">            <div class="service-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            </div>            <p class="service-index">04</p>
             <h3>Optik & Technik nach Wunsch</h3>
             <p>
               Wir setzen dein Konzept um: clean, sportlich oder show-ready. Immer präzise,
@@ -225,6 +276,18 @@
       <p>Instagram: @snp.performance</p>
       <p id="year"></p>
     </footer>
+
+    <!-- Floating CTA -->
+    <a
+      href="https://www.instagram.com/snp.performance"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="float-cta"
+      aria-label="DM an SNP Performance"
+    >
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      <span>DM senden</span>
+    </a>
 
     <script src="script.js"></script>
   </body>
